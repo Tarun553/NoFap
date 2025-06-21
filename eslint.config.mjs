@@ -1,14 +1,21 @@
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import { defineConfig } from "eslint/config";
+import { FlatCompat } from '@eslint/eslintrc';
 
+const compat = new FlatCompat({
+  baseDirectory: import.meta.dirname,
+});
 
-export default defineConfig([
-  { files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"], plugins: { js }, extends: ["js/recommended"] },
-  { files: ["**/*.js"], languageOptions: { sourceType: "script" } },
-  { files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"], languageOptions: { globals: globals.browser } },
-  tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
-]);
+const eslintConfig = [
+  ...compat.config({
+    extends: ['next'],
+    rules: {
+      'react/no-unescaped-entities': 'off',
+      '@next/next/no-page-custom-font': 'off',
+      '@typescript-eslint/no-unused-vars': 'warn',
+      'prefer-const': 'warn',
+      'react/display-name': 'off',
+      'react-hooks/exhaustive-deps': 'warn',
+    },
+  }),
+];
+
+export default eslintConfig;

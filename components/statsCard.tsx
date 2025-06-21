@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader } from '@/components/ui/card';
 import { TrendingUp, Calendar, Target, Award } from 'lucide-react';
 
 interface StatsCardProps {
@@ -14,8 +14,7 @@ const StatsCard: React.FC<StatsCardProps> = ({
   currentStreak,
   longestStreak,
   weeklySuccessRate,
-  monthlySuccessRate,
-  totalDays
+  monthlySuccessRate
 }) => {
   const stats = [
     {

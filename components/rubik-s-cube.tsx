@@ -520,7 +520,8 @@ function EnhancedSpotlight(props: any) {
   const light = useRef();
   
   // Uncomment to see a visual helper for the spotlight
-  //useHelper(spotlightRef, THREE.SpotLightHelper, 'red');
+  // @ts-ignore
+  useHelper(spotlightRef, THREE.SpotLightHelper, 'red');
   
   useEffect(() => {
     if (light.current) {// @ts-ignore
@@ -551,6 +552,7 @@ function SceneContent() {
   const [time, setTime] = useState(0);
   useFrame((state) => {
     setTime(state.clock.getElapsedTime());
+   
   });
   
   return (
