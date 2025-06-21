@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Quote, RefreshCw, Heart, Star } from 'lucide-react';
+import { Quote, RefreshCw, Star } from 'lucide-react';
 
 interface MotivationalContentProps {
   isStreakBroken: boolean;
@@ -67,7 +67,7 @@ const MotivationalContent: React.FC<MotivationalContentProps> = ({
     }, 10000); // Change quote every 10 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [quotes.length]);
 
   if (isStreakBroken) {
     return (

@@ -203,7 +203,7 @@ const RubiksCubeModel =  forwardRef((props: React.ComponentProps<any>, ref)=> {
         clearTimeout(throttleTimer);
       }
     };
-  }, [handleViewportChange, resetCube]);
+  }, [handleViewportChange]);
 
   useEffect(() => {
     const handleVisibilityChange = () => {

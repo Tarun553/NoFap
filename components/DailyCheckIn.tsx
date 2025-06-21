@@ -9,9 +9,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, XCircle, Target } from "lucide-react";
+import { CheckCircle, XCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-import { P, H1, H2 } from "@/components/ui/Typography";
+import { P, H2 } from "@/components/ui/Typography";
 
 interface DailyCheckInProps {
   onCheckIn: (successful: boolean) => void;
