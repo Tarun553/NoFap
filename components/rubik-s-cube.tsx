@@ -519,9 +519,7 @@ function EnhancedSpotlight(props: any) {
   // @ts-ignore
   const light = useRef();
   
-  // Uncomment to see a visual helper for the spotlight
-  // @ts-ignore
-  useHelper(spotlightRef, THREE.SpotLightHelper, 'red');
+  
   
   useEffect(() => {
     if (light.current) {// @ts-ignore
